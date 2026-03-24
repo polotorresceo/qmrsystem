@@ -1,0 +1,1329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOVYTEC | Sistema Scanner Cuántico – Tu Negocio de Alta Demanda</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --navy:     #003087;
+  --navy-d:   #001f5b;
+  --navy-l:   #0045b5;
+  --red:      #D42B2B;
+  --red-l:    #F03C3C;
+  --white:    #FFFFFF;
+  --offwhite: #F5F7FB;
+  --gray:     #6B7A99;
+  --light:    #E8EDF8;
+  --gold:     #C8971E;
+  --gold-l:   #F0B830;
+  --green:    #0A8A4E;
+  --green-l:  #0EBF6D;
+  --text:     #1A2545;
+  --muted:    #8899BB;
+  --border:   rgba(0,48,135,0.15);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: var(--white);
+  color: var(--text);
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* ── TOPBAR ─────────────────── */
+.topbar {
+  background: var(--navy-d);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 10px 24px;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+}
+.topbar strong { color: var(--gold-l); }
+
+/* ── NAV ────────────────────── */
+nav {
+  position: sticky; top: 0; z-index: 100;
+  background: var(--white);
+  border-bottom: 3px solid var(--navy);
+  padding: 14px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 20px rgba(0,48,135,0.12);
+}
+.nav-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 28px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--navy);
+  text-decoration: none;
+}
+.nav-logo span { color: var(--red); }
+.nav-cta {
+  background: var(--red);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s;
+  white-space: nowrap;
+}
+.nav-cta:hover { background: var(--red-l); transform: translateY(-1px); }
+
+/* ── HERO ───────────────────── */
+.hero {
+  background: linear-gradient(135deg, var(--navy-d) 0%, var(--navy) 55%, #1a4fd6 100%);
+  color: white;
+  padding: 80px 24px 90px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 40% at 80% 20%, rgba(212,43,43,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 60% at 10% 80%, rgba(0,69,181,0.3) 0%, transparent 60%);
+}
+.hero::after {
+  content: '';
+  position: absolute; bottom: -2px; left: 0; right: 0;
+  height: 60px;
+  background: var(--white);
+  clip-path: ellipse(60% 100% at 50% 100%);
+}
+
+.hero-inner { position: relative; z-index: 1; max-width: 860px; margin: 0 auto; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(212,43,43,0.25);
+  border: 1px solid rgba(212,43,43,0.6);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #FFB3B3;
+  margin-bottom: 28px;
+  animation: fadeDown 0.7s ease both;
+}
+
+.hero h1 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(32px, 7vw, 68px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+  animation: fadeUp 0.8s 0.1s ease both;
+}
+.hero h1 .accent { color: var(--gold-l); }
+.hero h1 .accent-r { color: #FF8080; }
+
+.hero-sub {
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 400;
+  color: rgba(255,255,255,0.82);
+  max-width: 680px;
+  margin: 0 auto 36px;
+  animation: fadeUp 0.8s 0.25s ease both;
+  line-height: 1.7;
+}
+.hero-sub strong { color: var(--gold-l); font-weight: 700; }
+
+.hero-btns {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s 0.4s ease both;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--red);
+  color: white;
+  font-weight: 800;
+  font-size: 17px;
+  padding: 18px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  letter-spacing: 0.5px;
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 8px 30px rgba(212,43,43,0.5);
+}
+.btn-primary:hover { background: var(--red-l); transform: translateY(-3px); box-shadow: 0 16px 40px rgba(212,43,43,0.5); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: white;
+  font-weight: 700;
+  font-size: 17px;
+  padding: 17px 36px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 2px solid rgba(255,255,255,0.5);
+  transition: border-color 0.2s, background 0.2s;
+}
+.btn-outline:hover { border-color: white; background: rgba(255,255,255,0.1); }
+
+/* ── DILEMA SECTION ─────────── */
+.dilema {
+  background: var(--offwhite);
+  padding: 80px 24px;
+}
+.dilema-inner { max-width: 1060px; margin: 0 auto; }
+
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: inline-block;
+  width: 28px; height: 3px;
+  background: var(--red);
+  border-radius: 2px;
+}
+
+.section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(30px, 5.5vw, 54px);
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 1.1;
+  color: var(--navy-d);
+  margin-bottom: 20px;
+}
+.section-title .highlight { color: var(--red); }
+.section-title .gold { color: var(--gold); }
+
+.section-desc {
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--gray);
+  max-width: 720px;
+  line-height: 1.85;
+  margin-bottom: 48px;
+}
+
+/* Dilema cards */
+.dilema-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 48px;
+}
+
+.dilema-card {
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 30px 26px;
+  position: relative;
+  transition: box-shadow 0.3s, transform 0.3s;
+  border-top: 4px solid var(--navy-l);
+}
+.dilema-card:hover { box-shadow: 0 12px 40px rgba(0,48,135,0.1); transform: translateY(-4px); }
+.dilema-card.bad { border-top-color: var(--red); }
+.dilema-card.neutral { border-top-color: var(--gold); }
+
+.dilema-card .d-icon { font-size: 38px; margin-bottom: 14px; }
+.dilema-card h3 { font-size: 16px; font-weight: 800; color: var(--navy-d); margin-bottom: 8px; }
+.dilema-card p { font-size: 13.5px; color: var(--gray); line-height: 1.7; }
+.dilema-card .verdict {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+.verdict.danger { background: #FFE8E8; color: var(--red); }
+.verdict.warn { background: #FFF5D6; color: var(--gold); }
+.verdict.ok { background: #E6F0FF; color: var(--navy); }
+
+/* Solución intro strip */
+.solucion-strip {
+  background: linear-gradient(135deg, var(--navy-d), var(--navy));
+  border-radius: 16px;
+  padding: 40px 48px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+  color: white;
+}
+.strip-icon { font-size: 56px; flex-shrink: 0; }
+.strip-text h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--gold-l);
+}
+.strip-text p { font-size: 15px; color: rgba(255,255,255,0.8); line-height: 1.75; }
+.strip-text strong { color: white; }
+
+/* ── SCANNER CUANTICO ───────── */
+.scanner-section {
+  padding: 80px 24px;
+  background: white;
+}
+.scanner-inner { max-width: 1060px; margin: 0 auto; }
+
+.scanner-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+@media (max-width: 768px) { .scanner-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+.scanner-visual {
+  background: linear-gradient(145deg, #001a4d, #003087);
+  border-radius: 20px;
+  padding: 50px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  min-height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.scanner-visual::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(0,200,255,0.06) 40px),
+              repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(0,200,255,0.06) 40px);
+}
+.scanner-visual::after {
+  content: '';
+  position: absolute;
+  width: 280px; height: 280px;
+  border-radius: 50%;
+  border: 2px solid rgba(0,200,255,0.2);
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  animation: ripple 3s ease-in-out infinite;
+}
+
+@keyframes ripple {
+  0% { width: 200px; height: 200px; opacity: 0.5; }
+  100% { width: 340px; height: 340px; opacity: 0; }
+}
+
+.scanner-body-icon {
+  font-size: 80px;
+  position: relative; z-index: 1;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.scanner-ai-badge {
+  position: relative; z-index: 1;
+  background: rgba(0,200,255,0.15);
+  border: 1px solid rgba(0,200,255,0.4);
+  border-radius: 100px;
+  padding: 8px 20px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #00E5FF;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.scanner-data {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative; z-index: 1;
+}
+.data-chip {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.8);
+  font-weight: 600;
+  text-align: center;
+}
+.data-chip .val { font-size: 20px; color: #00FF9D; font-weight: 800; display: block; }
+
+.scanner-info h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(26px, 4vw, 42px);
+  font-weight: 700;
+  color: var(--navy-d);
+  margin-bottom: 16px;
+  line-height: 1.2;
+}
+.scanner-info h2 span { color: var(--red); }
+
+.scanner-info p {
+  font-size: 15px;
+  color: var(--gray);
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.scanner-info p strong { color: var(--navy-d); font-weight: 700; }
+
+.scanner-feats {
+  list-style: none;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.scanner-feats li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text);
+}
+.feat-icon {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--navy), var(--navy-l));
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ── 7 BENEFICIOS ───────────── */
+.beneficios {
+  background: var(--offwhite);
+  padding: 80px 24px;
+}
+.beneficios-inner { max-width: 1060px; margin: 0 auto; }
+
+.beneficios-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+}
+
+.benefit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 34px 28px;
+  border: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.benefit-card:hover { box-shadow: 0 16px 48px rgba(0,48,135,0.12); transform: translateY(-5px); }
+.benefit-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--red));
+}
+
+.benefit-num {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 700;
+  color: var(--light);
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -2px;
+}
+
+.benefit-card .b-icon { font-size: 36px; margin-bottom: 14px; }
+.benefit-card h3 { font-size: 17px; font-weight: 800; color: var(--navy-d); margin-bottom: 10px; }
+.benefit-card p { font-size: 13.5px; color: var(--gray); line-height: 1.75; }
+
+/* ── PACK / QUÉ INCLUYE ─────── */
+.pack-section {
+  padding: 80px 24px;
+  background: white;
+}
+.pack-inner { max-width: 1060px; margin: 0 auto; }
+
+.pack-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.pack-card {
+  background: var(--offwhite);
+  border-radius: 14px;
+  padding: 30px 26px;
+  border: 1px solid var(--border);
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+.pack-card:hover { box-shadow: 0 10px 30px rgba(0,48,135,0.1); transform: translateY(-3px); }
+
+.pack-num-box {
+  width: 44px; height: 44px;
+  border-radius: 10px;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  flex-shrink: 0;
+}
+
+.pack-content h3 { font-size: 15px; font-weight: 800; color: var(--navy-d); margin-bottom: 6px; }
+.pack-content p { font-size: 13px; color: var(--gray); line-height: 1.65; }
+
+/* ── PROCESO ROI ────────────── */
+.proceso {
+  background: linear-gradient(135deg, var(--navy-d) 0%, #002070 100%);
+  padding: 80px 24px;
+  color: white;
+}
+.proceso-inner { max-width: 860px; margin: 0 auto; }
+
+.proceso-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(28px, 5vw, 50px);
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+.proceso-title span { color: var(--gold-l); }
+.proceso-subtitle { text-align: center; color: rgba(255,255,255,0.7); font-size: 15px; margin-bottom: 52px; }
+
+.timeline { display: flex; flex-direction: column; gap: 0; }
+.t-step {
+  display: flex;
+  gap: 24px;
+  position: relative;
+  padding-bottom: 36px;
+}
+.t-step:last-child { padding-bottom: 0; }
+.t-step::before {
+  content: '';
+  position: absolute;
+  left: 21px; top: 44px;
+  width: 2px;
+  height: calc(100% - 44px);
+  background: linear-gradient(to bottom, rgba(200,151,30,0.6), transparent);
+}
+.t-step:last-child::before { display: none; }
+
+.t-num {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #000;
+  font-family: 'Oswald', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  position: relative; z-index: 1;
+}
+.t-body { padding-top: 6px; }
+.t-body h4 { font-size: 17px; font-weight: 800; margin-bottom: 6px; color: white; }
+.t-body p { font-size: 14px; color: rgba(255,255,255,0.65); line-height: 1.7; }
+
+/* ── FINANCIERO ─────────────── */
+.financiero {
+  padding: 80px 24px;
+  background: var(--offwhite);
+}
+.fin-inner { max-width: 960px; margin: 0 auto; }
+
+.fin-box {
+  background: white;
+  border-radius: 20px;
+  border: 2px solid var(--navy);
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,48,135,0.12);
+}
+
+.fin-header {
+  background: linear-gradient(135deg, var(--navy-d), var(--navy));
+  padding: 36px 44px;
+  color: white;
+}
+.fin-header h2 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 36px;
+  letter-spacing: 2px;
+  margin-bottom: 4px;
+  color: var(--gold-l);
+}
+.fin-header p { color: rgba(255,255,255,0.7); font-size: 14px; }
+
+.fin-body { padding: 40px 44px; }
+
+.fin-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--border);
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.fin-row:last-child { border-bottom: none; }
+
+.fin-label { font-size: 15px; color: var(--text); font-weight: 500; flex: 1; }
+.fin-label small { display: block; font-size: 12px; color: var(--muted); font-weight: 400; margin-top: 2px; }
+.fin-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--navy);
+  text-align: right;
+  white-space: nowrap;
+}
+.fin-val.green { color: var(--green); }
+.fin-val.red { color: var(--red); }
+
+.fin-total {
+  background: linear-gradient(135deg, var(--navy-d), var(--navy));
+  border-radius: 14px;
+  padding: 28px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 28px;
+}
+.fin-total .tot-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 22px;
+  letter-spacing: 2px;
+  color: var(--gold-l);
+}
+.fin-total .tot-label small { display: block; font-size: 12px; color: rgba(255,255,255,0.5); font-weight: 400; letter-spacing: 0; margin-top: 4px; font-family: 'Montserrat', sans-serif; }
+.fin-total .tot-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 56px;
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+}
+
+.roi-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+.roi-chip {
+  background: var(--offwhite);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 18px;
+  text-align: center;
+  border-top: 3px solid var(--navy);
+}
+.roi-chip .rc-val {
+  font-family: 'Oswald', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1;
+  display: block;
+}
+.roi-chip .rc-label { font-size: 11px; color: var(--muted); margin-top: 6px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+
+/* ── OFERTA FINAL ───────────── */
+.oferta {
+  background: white;
+  padding: 80px 24px;
+}
+.oferta-inner { max-width: 960px; margin: 0 auto; }
+
+.oferta-box {
+  background: linear-gradient(145deg, var(--navy-d), #002470);
+  border-radius: 24px;
+  padding: 64px 56px;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 30px 80px rgba(0,48,135,0.3);
+}
+.oferta-box::before {
+  content: '';
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 300px; height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(212,43,43,0.2) 0%, transparent 70%);
+}
+.oferta-box::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -60px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(200,151,30,0.12) 0%, transparent 70%);
+}
+
+.oferta-eyebrow {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #FFB3B3;
+  margin-bottom: 16px;
+  position: relative; z-index: 1;
+}
+
+.oferta-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(36px, 7vw, 72px);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  position: relative; z-index: 1;
+}
+.oferta-title .gold { color: var(--gold-l); }
+
+.oferta-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 36px 0;
+  text-align: left;
+  position: relative; z-index: 1;
+}
+
+.o-item {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 10px;
+  padding: 16px 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+.o-check { color: #00FF9D; font-size: 16px; flex-shrink: 0; margin-top: 2px; }
+.o-item p { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.88); }
+.o-item p strong { color: white; font-weight: 700; }
+
+.garantia {
+  background: rgba(0,255,133,0.08);
+  border: 1px solid rgba(0,255,133,0.3);
+  border-radius: 12px;
+  padding: 22px 28px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  text-align: left;
+  margin: 28px 0 36px;
+  position: relative; z-index: 1;
+  flex-wrap: wrap;
+}
+.garantia .g-ico { font-size: 36px; flex-shrink: 0; }
+.garantia h4 { color: #00FF9D; font-size: 16px; margin-bottom: 4px; }
+.garantia p { font-size: 13px; color: rgba(255,255,255,0.65); }
+
+.price-reveal {
+  position: relative; z-index: 1;
+  margin: 36px 0 28px;
+}
+.price-was { font-size: 18px; color: rgba(255,255,255,0.4); text-decoration: line-through; margin-bottom: 4px; }
+.price-now-wrap {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+}
+.price-currency { font-family: 'Oswald', sans-serif; font-size: 36px; color: var(--gold-l); }
+.price-amount {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(70px, 14vw, 120px);
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  filter: drop-shadow(0 4px 20px rgba(255,255,255,0.15));
+}
+.price-mxn { font-size: 24px; color: rgba(255,255,255,0.5); align-self: flex-end; margin-bottom: 12px; }
+.price-note { font-size: 13px; color: rgba(255,255,255,0.45); margin-top: 8px; }
+
+/* ── CTA FINAL ──────────────── */
+.cta-final {
+  background: var(--offwhite);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.wa-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  background: #25D366;
+  color: white;
+  font-weight: 800;
+  font-size: 20px;
+  padding: 22px 52px;
+  border-radius: 10px;
+  text-decoration: none;
+  box-shadow: 0 10px 40px rgba(37,211,102,0.35);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+  letter-spacing: 0.3px;
+}
+.wa-btn:hover { background: #1fb558; transform: translateY(-4px); box-shadow: 0 20px 50px rgba(37,211,102,0.4); }
+.wa-ico { width: 30px; height: 30px; fill: white; flex-shrink: 0; }
+
+.cta-subtitle { font-size: 15px; color: var(--gray); margin-top: 16px; }
+.cta-subtitle strong { color: var(--navy); }
+
+/* ── FOOTER ─────────────────── */
+footer {
+  background: var(--navy-d);
+  padding: 40px 24px;
+  text-align: center;
+  color: rgba(255,255,255,0.6);
+}
+.f-logo {
+  font-family: 'Oswald', sans-serif;
+  font-size: 32px;
+  letter-spacing: 4px;
+  color: white;
+  margin-bottom: 6px;
+}
+.f-logo span { color: var(--red); }
+footer p { font-size: 13px; margin-bottom: 4px; }
+footer a { color: var(--gold-l); text-decoration: none; }
+
+/* ── DIVIDER ─────────────────── */
+.section-divider {
+  height: 4px;
+  background: linear-gradient(90deg, var(--navy), var(--red), var(--navy));
+  opacity: 0.15;
+}
+
+/* ── ANIMATIONS ─────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ─────────────── */
+@media (max-width: 640px) {
+  nav { padding: 12px 20px; }
+  .oferta-box { padding: 40px 24px; }
+  .fin-body { padding: 28px 24px; }
+  .fin-header { padding: 28px 24px; }
+  .solucion-strip { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">⚡ Sistema exclusivo para profesionistas &nbsp;|&nbsp; <strong>ROI garantizado en menos de 30 días</strong> &nbsp;|&nbsp; Cupos limitados por ciudad</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">MOVY<span>TEC</span></a>
+  <a class="nav-cta" href="https://wa.me/522214282564?text=Hola%2C%20me%20interesa%20el%20Sistema%20Scanner%20Movytec" target="_blank">📲 Quiero más info</a>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">🚨 Atención: Profesionista en transición</div>
+    <h1>
+      ¿Perdiste tu empleo y no sabes<br>
+      en qué invertir tu <span class="accent">liquidación</span>?
+    </h1>
+    <p class="hero-sub">
+      Tienes dinero en la mano y una decisión que <strong>cambiará los próximos años de tu vida.</strong>
+      Antes de equivocarte, lee esto hasta el final.
+    </p>
+    <div class="hero-btns">
+      <a class="btn-primary" href="https://wa.me/522214282564?text=Hola%2C%20me%20interesa%20el%20Sistema%20Scanner%20Movytec" target="_blank">📲 Hablar con un Asesor</a>
+      <a class="btn-outline" href="#solucion">Ver la Solución ↓</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ EL DILEMA ══ -->
+<section class="dilema">
+  <div class="dilema-inner">
+    <div class="section-eyebrow reveal">El Gran Dilema</div>
+    <h2 class="section-title reveal">El momento más <span class="highlight">crítico</span> de tu vida profesional</h2>
+    <p class="section-desc reveal">
+      Tienes una liquidación en el banco. Tienes experiencia. Tienes hambre de independencia.
+      Pero el 80% de las personas en tu situación comete el mismo error:
+      <strong>tomar la primera opción que parece segura</strong>, sin analizar el retorno real.
+      Aquí está el panorama honesto:
+    </p>
+
+    <div class="dilema-grid">
+      <div class="dilema-card bad reveal">
+        <div class="d-icon">📄</div>
+        <h3>Llenar CVs y volver a emplearte</h3>
+        <p>Meses buscando, entrevistas interminables, sueldos recortados. Vuelves al mismo ciclo de dependencia y limitación económica que te trajo hasta aquí.</p>
+        <span class="verdict danger">⚠ Alto riesgo de estancamiento</span>
+      </div>
+      <div class="dilema-card bad reveal">
+        <div class="d-icon">🍕</div>
+        <h3>Negocio físico: comida, tienda o servicio</h3>
+        <p>Renta, inventario, empleados, merma. La mayoría quiebra antes de los 18 meses. Requiere presencia constante, capital alto y experiencia comercial que no siempre se tiene.</p>
+        <span class="verdict danger">⚠ Capital en riesgo alto</span>
+      </div>
+      <div class="dilema-card neutral reveal">
+        <div class="d-icon">📦</div>
+        <h3>Amazon, Dropshipping o Ecommerce</h3>
+        <p>Saturado, competitivo, márgenes reducidos. Requiere capital para publicidad, logística, manejo de devoluciones y meses sin ver resultados claros.</p>
+        <span class="verdict warn">⚡ Curva de aprendizaje alta</span>
+      </div>
+      <div class="dilema-card neutral reveal">
+        <div class="d-icon">💻</div>
+        <h3>Infoproductos o Cursos Digitales</h3>
+        <p>Excelente si ya eres experto y tienes audiencia. Sin embargo, construir autoridad desde cero puede tomar 1-2 años antes de ver ingresos consistentes.</p>
+        <span class="verdict warn">⚡ Requiere audiencia previa</span>
+      </div>
+    </div>
+
+    <div id="solucion" class="solucion-strip reveal">
+      <div class="strip-icon">🎯</div>
+      <div class="strip-text">
+        <h3>¿Y si existiera una cuarta opción?</h3>
+        <p>Un proyecto <strong>magnético, probado y de alta demanda</strong> en el segmento de la salud —
+          el sector que <strong>mes con mes incrementa su demanda</strong> sin importar crisis económicas,
+          que puedes operar con solo una laptop y un celular, y que te da retorno en menos de 30 días.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ SCANNER CUÁNTICO ══ -->
+<section class="scanner-section">
+  <div class="scanner-inner">
+    <div style="text-align:center; margin-bottom: 56px;">
+      <div class="section-eyebrow reveal" style="justify-content:center;">Tecnología de Vanguardia</div>
+      <h2 class="section-title reveal" style="text-align:center;">El <span class="highlight">Escaneo Cuántico</span> Corporal<br>con Inteligencia Artificial</h2>
+      <p class="section-desc reveal" style="margin: 0 auto 0; text-align:center;">
+        La herramienta que convierte tu consulta en una experiencia científica de alto impacto que el cliente puede <em>ver, entender y creer</em>.
+      </p>
+    </div>
+    <div class="scanner-grid">
+      <div class="scanner-visual reveal">
+        <div class="scanner-body-icon">🧬</div>
+        <div class="scanner-ai-badge">⚡ A.I. Quantum Scan · En Tiempo Real</div>
+        <div class="scanner-data">
+          <div class="data-chip"><span class="val">98%</span>Precisión</div>
+          <div class="data-chip"><span class="val">3min</span>Por sesión</div>
+          <div class="data-chip"><span class="val">500+</span>Parámetros</div>
+        </div>
+      </div>
+      <div class="scanner-info reveal">
+        <h2>Tu cliente <span>ve</span> su propio cuerpo en pantalla</h2>
+        <p>
+          El <strong>Sistema Scanner Cuántico Movytec</strong> utiliza tecnología de biorresonancia cuántica
+          potenciada con inteligencia artificial para analizar el estado energético, celular y
+          nutricional del cuerpo humano en menos de 3 minutos.
+        </p>
+        <p>
+          El resultado: un reporte visual, personalizado y comprensible que <strong>genera confianza
+          inmediata</strong> en el cliente y abre naturalmente la conversación sobre los suplementos
+          Immunotec como solución científicamente respaldada.
+        </p>
+        <ul class="scanner-feats">
+          <li><div class="feat-icon">✦</div> Análisis de más de 500 parámetros corporales</li>
+          <li><div class="feat-icon">✦</div> Reporte visual personalizado en tiempo real</li>
+          <li><div class="feat-icon">✦</div> Compatible con el protocolo de suplementación Immunotec</li>
+          <li><div class="feat-icon">✦</div> Sin invasión, sin dolor, sin agujas — 100% digital</li>
+          <li><div class="feat-icon">✦</div> Capacidad de operar en restaurantes, consultorios y eventos</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ 7 BENEFICIOS ══ -->
+<section class="beneficios">
+  <div class="beneficios-inner">
+    <div class="section-eyebrow reveal">Por qué elegir Movytec</div>
+    <h2 class="section-title reveal">7 Razones para invertir en<br><span class="gold">este sistema ahora</span></h2>
+    <p class="section-desc reveal">Diseñado específicamente para profesionistas que buscan independencia real, no otro empleo disfrazado de negocio.</p>
+
+    <div class="beneficios-grid">
+      <div class="benefit-card reveal">
+        <div class="benefit-num">01</div>
+        <div class="b-icon">💰</div>
+        <h3>Baja Inversión, Alto Retorno</h3>
+        <p>Una de las inversiones iniciales más accesibles del mercado para un negocio de salud con tecnología. Sin renta, sin inventario, sin nómina.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">02</div>
+        <div class="b-icon">🏦</div>
+        <h3>Independencia Financiera Real</h3>
+        <p>No dependes de un jefe, un horario ni una ubicación fija. Tus ingresos crecen en función de cuántas sesiones realizas — y de la red que construyes.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">03</div>
+        <div class="b-icon">💻</div>
+        <h3>Operas con Solo una Laptop y un Celular</h3>
+        <p>El negocio cabe en una mochila. Puedes operar en restaurantes, plazas, colegios, consultorios y desde casa. Libertad de movimiento total.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">04</div>
+        <div class="b-icon">🎓</div>
+        <h3>Entrenamiento de Calidad Incluido</h3>
+        <p>No te lanzamos al vacío. Recibes capacitación presencial con protocolo probado de ventas en frío, cierre y seguimiento de clientes desde el día 1.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">05</div>
+        <div class="b-icon">🔬</div>
+        <h3>Herramienta de Alta Tecnología Científica</h3>
+        <p>El scanner cuántico con IA te posiciona como un especialista diferenciado. No compites en precio — compites en credibilidad y resultados visibles.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">06</div>
+        <div class="b-icon">📈</div>
+        <h3>Mercado en Crecimiento Mensual</h3>
+        <p>El segmento de salud preventiva y suplementación crece mes con mes. Immunotec es una empresa de décadas con red internacional. El mercado ya existe.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-num">07</div>
+        <div class="b-icon">🤝</div>
+        <h3>Sistema de Ventas y Marketing Listo</h3>
+        <p>No empiezas desde cero. Recibes funnel digital, volantes impresos, posts para redes sociales y el protocolo de ventas en campo. Solo ejecutas.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ QUÉ INCLUYE ══ -->
+<section class="pack-section">
+  <div class="pack-inner">
+    <div class="section-eyebrow reveal">El Sistema Completo</div>
+    <h2 class="section-title reveal">Todo lo que recibes <span class="highlight">listo para operar</span></h2>
+    <p class="section-desc reveal">No un producto. Un negocio activado con tecnología + marketing + formación + ejecución en campo.</p>
+    <div class="pack-grid">
+      <div class="pack-card reveal">
+        <div class="pack-num-box">01</div>
+        <div class="pack-content">
+          <h3>🔬 Scanner de Diagnóstico Cuántico</h3>
+          <p>Hardware de precisión para análisis corporal con IA. Genera reportes visuales en tiempo real que tu cliente comprende de inmediato.</p>
+        </div>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-num-box">02</div>
+        <div class="pack-content">
+          <h3>💻 Laptop Windows 10 Configurada</h3>
+          <p>Software instalado, estudio de caso, guía del curso y plan de trabajo en tiempo real. Lista para operar desde el primer día.</p>
+        </div>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-num-box">03</div>
+        <div class="pack-content">
+          <h3>🍽️ Capacitación Presencial en Campo</h3>
+          <p>Entrenamiento real en restaurante: aprendes el protocolo de demo, presentación y cierre en frío con resultados comprobados.</p>
+        </div>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-num-box">04</div>
+        <div class="pack-content">
+          <h3>📄 1,000 Volantes Físicos Impresos</h3>
+          <p>Material profesional para distribución en colegios, centros comerciales y zonas de alto tráfico en tu radio de acción.</p>
+        </div>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-num-box">05</div>
+        <div class="pack-content">
+          <h3>🎯 Funnel de Ventas Digital</h3>
+          <p>Embudo de captación completo: landing page, mensajes de seguimiento y proceso automatizado para convertir contactos en clientes.</p>
+        </div>
+      </div>
+      <div class="pack-card reveal">
+        <div class="pack-num-box">06</div>
+        <div class="pack-content">
+          <h3>📱 4 Posteos Facebook con Flyers y Videos</h3>
+          <p>Contenido creado y listo para publicar. 4 diseños con texto persuasivo y videos de captación. Activa tu presencia desde el día 1.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ══ PROCESO ROI ══ -->
+<section class="proceso">
+  <div class="proceso-inner">
+    <h2 class="proceso-title reveal">Tu ruta al <span>ROI en 30 días</span></h2>
+    <p class="proceso-subtitle reveal">Paso a paso, sin improvisación. El sistema hace el trabajo.</p>
+    <div class="timeline">
+      <div class="t-step reveal">
+        <div class="t-num">1</div>
+        <div class="t-body">
+          <h4>Días 1–3 · Activación del Sistema</h4>
+          <p>Recibes el scanner, la laptop configurada y tu capacitación presencial. Dominas el protocolo de demo y cierre en menos de 72 horas.</p>
+        </div>
+      </div>
+      <div class="t-step reveal">
+        <div class="t-num">2</div>
+        <div class="t-body">
+          <h4>Días 4–7 · Distribución Física en Campo</h4>
+          <p>Distribuyes tus 1,000 volantes en colegios, plazas y zonas de alto tráfico. El gancho: "Análisis gratuito de bienestar corporal con IA".</p>
+        </div>
+      </div>
+      <div class="t-step reveal">
+        <div class="t-num">3</div>
+        <div class="t-body">
+          <h4>Días 4–30 · Captación Digital Paralela</h4>
+          <p>Publicas los 4 posts en Facebook y activas el funnel. Prospectos entran por ambos canales con seguimiento automatizado.</p>
+        </div>
+      </div>
+      <div class="t-step reveal">
+        <div class="t-num">4</div>
+        <div class="t-body">
+          <h4>Días 7–30 · Demo + Cierre en Sesión</h4>
+          <p>Realizas el scan en vivo. El cliente ve su análisis en pantalla. Presentas el plan Immunotec. La tecnología genera confianza — tú cierras.</p>
+        </div>
+      </div>
+      <div class="t-step reveal">
+        <div class="t-num">5</div>
+        <div class="t-body">
+          <h4>Día 30 · ROI Recuperado + Red Activa</h4>
+          <p>Con 16 sesiones al mes recuperas tu inversión completa y comienzas a construir tu red residual con Immunotec. El negocio ya es tuyo.</p>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top: 48px;">
+      <a class="btn-primary" href="https://wa.me/522214282564?text=Hola%2C%20quiero%20iniciar%20con%20el%20Sistema%20Scanner%20Movytec" target="_blank">🚀 Quiero Iniciar Mi Proceso</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PLAN FINANCIERO ══ -->
+<section class="financiero">
+  <div class="fin-inner">
+    <div class="section-eyebrow reveal">Plan Financiero</div>
+    <h2 class="section-title reveal">Los números que <span class="gold">no mienten</span></h2>
+    <p class="section-desc reveal">Desglose transparente de tu inversión y la proyección real de retorno en el primer mes.</p>
+
+    <div class="fin-box reveal">
+      <div class="fin-header">
+        <h2>📊 DESGLOSE DEL SISTEMA</h2>
+        <p>Valor de mercado individual de cada componente incluido</p>
+      </div>
+      <div class="fin-body">
+        <div class="fin-row">
+          <div class="fin-label">🔬 Scanner Cuántico con IA<small>Tecnología de biorresonancia en tiempo real</small></div>
+          <div class="fin-val">$8,500</div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-label">💻 Laptop Windows 10 + Software Instalado<small>Lista para operar desde el día 1</small></div>
+          <div class="fin-val">$4,500</div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-label">🍽️ Capacitación Presencial en Campo<small>Protocolo de demo y cierre en frío</small></div>
+          <div class="fin-val">$3,000</div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-label">📄 1,000 Volantes Impresos<small>Material físico para colegios y centros comerciales</small></div>
+          <div class="fin-val">$1,200</div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-label">🎯 Funnel de Ventas Digital Completo<small>Captación y seguimiento automatizado</small></div>
+          <div class="fin-val">$1,800</div>
+        </div>
+        <div class="fin-row">
+          <div class="fin-label">📱 4 Posteos Facebook (Flyers + Videos)<small>Contenido listo para activar captación digital</small></div>
+          <div class="fin-val">$1,000</div>
+        </div>
+
+        <div class="fin-total">
+          <div class="tot-label">INVERSIÓN TOTAL DEL SISTEMA<small>Precio único · Sin mensualidades · Sin letra chica</small></div>
+          <div class="tot-val">$20,000</div>
+        </div>
+
+        <div style="margin-top: 40px;">
+          <div class="section-eyebrow" style="margin-bottom:16px;">📈 Proyección Conservadora Mes 1</div>
+          <div class="fin-row">
+            <div class="fin-label">Sesiones semanales (promedio conservador)<small>4 sesiones × 4 semanas = 16 sesiones totales</small></div>
+            <div class="fin-val" style="color:var(--navy-l)">16 sesiones</div>
+          </div>
+          <div class="fin-row">
+            <div class="fin-label">Ticket promedio por sesión + suplementos Immunotec<small>Consulta $500 + paquete Immunotec ~$1,000</small></div>
+            <div class="fin-val" style="color:var(--navy-l)">$1,500 c/u</div>
+          </div>
+          <div class="fin-row">
+            <div class="fin-label">Ingreso bruto mes 1<small>16 sesiones × $1,500</small></div>
+            <div class="fin-val green">$24,000</div>
+          </div>
+          <div class="fin-row">
+            <div class="fin-label">Inversión inicial recuperada</div>
+            <div class="fin-val red">-$20,000</div>
+          </div>
+          <div class="fin-row" style="border-top: 2px solid var(--navy); margin-top: 8px;">
+            <div class="fin-label" style="font-size:17px; font-weight:800; color:var(--green)">💰 GANANCIA NETA MES 1</div>
+            <div class="fin-val green" style="font-size:32px">+$4,000</div>
+          </div>
+        </div>
+
+        <div class="roi-row">
+          <div class="roi-chip">
+            <span class="rc-val">30</span>
+            <div class="rc-label">Días para el ROI</div>
+          </div>
+          <div class="roi-chip">
+            <span class="rc-val">120%</span>
+            <div class="rc-label">Retorno mes 1</div>
+          </div>
+          <div class="roi-chip">
+            <span class="rc-val">$48K+</span>
+            <div class="rc-label">Potencial mes 2</div>
+          </div>
+          <div class="roi-chip">
+            <span class="rc-val">∞</span>
+            <div class="rc-label">Residual en red</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ OFERTA IRRESISTIBLE ══ -->
+<section class="oferta">
+  <div class="oferta-inner">
+    <div class="oferta-box reveal">
+      <div class="oferta-eyebrow">⚡ Oferta exclusiva · Solo para profesionistas decididos</div>
+      <h2 class="oferta-title">EL SISTEMA COMPLETO<br><span class="gold">LISTO PARA OPERAR</span></h2>
+
+      <div class="oferta-items">
+        <div class="o-item"><div class="o-check">✅</div><p><strong>Scanner Cuántico con IA</strong><br>Diagnóstico visual en 3 minutos</p></div>
+        <div class="o-item"><div class="o-check">✅</div><p><strong>Laptop Windows 10</strong><br>Software + estudio + guía instalados</p></div>
+        <div class="o-item"><div class="o-check">✅</div><p><strong>Capacitación en Campo</strong><br>Ventas en frío con protocolo probado</p></div>
+        <div class="o-item"><div class="o-check">✅</div><p><strong>1,000 Volantes Físicos</strong><br>Listos para distribución inmediata</p></div>
+        <div class="o-item"><div class="o-check">✅</div><p><strong>Funnel de Ventas Digital</strong><br>Captación automatizada activa</p></div>
+        <div class="o-item"><div class="o-check">✅</div><p><strong>4 Posteos Facebook</strong><br>Flyers + Videos listos para publicar</p></div>
+      </div>
+
+      <div class="garantia">
+        <div class="g-ico">🛡️</div>
+        <div>
+          <h4>GARANTÍA DE ROI EN 30 DÍAS</h4>
+          <p>Si sigues el proceso del sistema y no recuperas tu inversión en 30 días, te acompañamos con soporte adicional hasta que lo logres. Tu éxito es nuestro compromiso.</p>
+        </div>
+      </div>
+
+      <div class="price-reveal">
+        <div class="price-was">Valor de mercado individual: $32,000 MXN</div>
+        <div class="price-now-wrap">
+          <div class="price-currency">$</div>
+          <div class="price-amount">20,000</div>
+          <div class="price-mxn">MXN</div>
+        </div>
+        <div class="price-note">Pago único · Sin mensualidades · Sin letra chica · Cupos limitados por ciudad</div>
+      </div>
+
+      <a class="wa-btn" href="https://wa.me/522214282564?text=Hola%2C%20me%20interesa%20el%20Sistema%20Scanner%20Movytec%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+        <svg class="wa-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Escribir al +52 221 428 2564
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA FINAL ══ -->
+<section class="cta-final">
+  <div style="max-width: 700px; margin: 0 auto;">
+    <div class="section-eyebrow reveal" style="justify-content:center;">No esperes más</div>
+    <h2 class="section-title reveal" style="text-align:center;">Tu liquidación puede ser el <span class="highlight">inicio</span>,<br>no el final</h2>
+    <p class="section-desc reveal" style="margin: 0 auto 36px; text-align:center;">
+      Miles de profesionistas en México están buscando exactamente lo que tú puedes ofrecer.
+      El sistema está listo. El mercado está activo. Solo falta tu decisión.
+    </p>
+    <div style="text-align:center;" class="reveal">
+      <a class="wa-btn" href="https://wa.me/522214282564?text=Hola%2C%20me%20interesa%20el%20Sistema%20Scanner%20Movytec%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n." target="_blank">
+        <svg class="wa-ico" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/></svg>
+        Contactar a Movytec Ahora
+      </a>
+      <p class="cta-subtitle" style="margin-top:16px;">Respuesta en menos de 1 hora · <strong>+52 221 428 2564</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="f-logo">MOVY<span>TEC</span></div>
+  <p style="margin-bottom:8px;">Sistema Scanner Cuántico · Soluciones en Salud con IA · Red Immunotec</p>
+  <p>📲 WhatsApp: <a href="https://wa.me/522214282564">+52 221 428 2564</a> · Puebla, México · 2025</p>
+  <p style="margin-top:16px; font-size:11px; opacity:0.4;">El ROI prometido depende del cumplimiento del proceso del sistema. Resultados individuales pueden variar.</p>
+</footer>
+
+<script>
+  const reveals = document.querySelectorAll('.reveal');
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 90);
+        obs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08 });
+  reveals.forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
